@@ -9,36 +9,36 @@
 
 
 function min(a, b) {
-    return (a < b)? a : b;
+    return (a < b) ? a : b;
 }
 
 
 function isEvenRecursive(number) {
     // Handle negative values:
     if (number < 0)
-	number = Math.abs(number);
+        number = Math.abs(number);
 
     if (number === 0)
-	return true;
+        return true;
     else if (number === 1)
-	return false;
-    else return isEvenRecursive(number - 2);    
+        return false;
+    else return isEvenRecursive(number - 2);
 }
 
-function countChar(string=null, search=null) {
+function countChar(string = null, search = null) {
     // String or character can be undefined or null
     if (string === null || search === null)
-	throw TypeError("Cannot have a null string or character.");
-    
+        throw TypeError("Cannot have a null string or character.");
+
     let count = 0;
     const length = string.length;
     for (let i = 0; i < length; i++) {
-	if (string[i] === search)
-	    count++;
+        if (string[i] === search)
+            count++;
     }
-	
 
-    return count;    
+
+    return count;
 }
 
 

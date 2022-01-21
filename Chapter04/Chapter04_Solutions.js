@@ -12,8 +12,8 @@
 
 function range(minValue, maxValue) {
     // Handle Reversed values:
-    if (maxValue < minValue) 
-	throw new RangeError(`Error: maxValue (${maxValue}) must be greater than minValue (${minValue})`);
+    if (maxValue < minValue)
+        throw new RangeError(`Error: maxValue (${maxValue}) must be greater than minValue (${minValue})`);
 
     // Now get the range size:
 
@@ -23,7 +23,7 @@ function range(minValue, maxValue) {
     let list = Array(size);
 
     for (let i = 0; i < size; i++) {
-	    list[i] = minValue + i;
+        list[i] = minValue + i;
     }
 
     return list;
@@ -33,7 +33,7 @@ function sum(list) {
     let sum = 0;
     for (const item of list)
         sum += item;
-        
+
     return sum;
 }
 
@@ -42,7 +42,7 @@ function run_example() {
 
     for (const i of list)
         console.log(`${i}\n`);
-    
+
 }
 
 function arrayIsEqual(array1, array2) {
@@ -64,21 +64,21 @@ function arrayIsEqual(array1, array2) {
 function deepEqual(firstItem, secondItem) {
 
     // Handle if any parameters are null:
-    if (firstItem === null || secondItem === null) 
+    if (firstItem === null || secondItem === null)
         return false;
 
     // Now then, check if any
-    if (typeof(firstItem) !== "object" || typeof(secondItem) !== "object")
+    if (typeof (firstItem) !== "object" || typeof (secondItem) !== "object")
         return false;
     else {
 
         // Do Deep Comparison:
         if (!arrayIsEqual(Object.keys(firstItem), Object.keys(secondItem)))
             return false;
-        
+
         // Now compare its value:
-            
-        return arrayIsEqual(Object.values(firstItem), Object.values(secondItem));        
+
+        return arrayIsEqual(Object.values(firstItem), Object.values(secondItem));
     }
 }
 
